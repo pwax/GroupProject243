@@ -105,16 +105,16 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8Tn-nL-9LU" firstAttribute="baseline" secondItem="UG2-ka-ucu" secondAttribute="firstBaseline" id="7RJ-IL-49H"/>
                             <constraint firstItem="Vhc-5q-wht" firstAttribute="centerX" secondItem="6ZW-ei-3dJ" secondAttribute="centerX" id="7iE-Dp-QMb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Tn-nL-9LU" secondAttribute="bottom" constant="55" id="9QH-5g-lzK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ON-4d-bsX" secondAttribute="bottom" constant="133" id="A8i-CY-Nxb"/>
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BNt-fR-RYr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ON-4d-bsX" secondAttribute="bottom" constant="133" id="DYq-d7-An2"/>
                             <constraint firstItem="nHd-8r-bzJ" firstAttribute="top" secondItem="K3x-Ju-g9e" secondAttribute="bottom" constant="16" id="FiL-xo-by3"/>
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="trailing" secondItem="UG2-ka-ucu" secondAttribute="trailing" id="LmX-zK-bHU"/>
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="top" secondItem="Vhc-5q-wht" secondAttribute="bottom" constant="62" id="Rz8-3n-A2P"/>
-                            <constraint firstItem="3ON-4d-bsX" firstAttribute="top" secondItem="nHd-8r-bzJ" secondAttribute="bottom" constant="73" id="T66-LW-BFD"/>
                             <constraint firstItem="K3x-Ju-g9e" firstAttribute="top" secondItem="6ZW-ei-3dJ" secondAttribute="bottom" constant="49" id="Ved-e0-tK1"/>
                             <constraint firstItem="Vhc-5q-wht" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="c7e-qs-grw"/>
                             <constraint firstItem="K3x-Ju-g9e" firstAttribute="centerX" secondItem="nHd-8r-bzJ" secondAttribute="centerX" id="cb5-gm-l0A"/>
@@ -125,19 +125,29 @@
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="leading" secondItem="8Tn-nL-9LU" secondAttribute="leading" id="y5G-iE-xTF"/>
                             <constraint firstItem="nHd-8r-bzJ" firstAttribute="centerX" secondItem="3ON-4d-bsX" secondAttribute="centerX" id="yoS-76-UJP"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C2D-kx-qyz" appends="YES" id="EKG-PS-EHU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Change of Base" id="ehA-aQ-e0Z"/>
                     <connections>
                         <outlet property="algorithmTimeLable" destination="nHd-8r-bzJ" id="b9a-yQ-VUq"/>
                         <outlet property="approachButton" destination="8Tn-nL-9LU" id="7fL-hD-4LP"/>
+                        <outlet property="approachConstraint" destination="9QH-5g-lzK" id="yl9-pk-4S3"/>
                         <outlet property="baseButton" destination="UG2-ka-ucu" id="r7v-Qw-RG7"/>
                         <outlet property="convertButton" destination="3ON-4d-bsX" id="CES-NB-1If"/>
+                        <outlet property="convertConstraint" destination="DYq-d7-An2" id="RCp-CZ-Goa"/>
                         <outlet property="numberTextField" destination="Vhc-5q-wht" id="of1-9f-t40"/>
                         <outlet property="resultLabel" destination="6ZW-ei-3dJ" id="8KU-kG-tql"/>
                         <outlet property="systemTimeLabel" destination="K3x-Ju-g9e" id="Xs1-fQ-QAA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C2D-kx-qyz">
+                    <connections>
+                        <action selector="backgroundTap:" destination="BYZ-38-t0r" id="jn9-pN-abT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
         </scene>
