@@ -47,9 +47,10 @@ class ViewController: UIViewController {
     //MARK: - UI
     func setupUI(){
         //button corners
-        convertButton.layer.cornerRadius = 8
-        approachButton.layer.cornerRadius = 8
-        baseButton.layer.cornerRadius = 8
+        let cornerRadius:CGFloat = 4
+        convertButton.layer.cornerRadius = cornerRadius
+        approachButton.layer.cornerRadius = cornerRadius
+        baseButton.layer.cornerRadius = cornerRadius
         
         //time labels
         systemTimeLabel.text = ""
