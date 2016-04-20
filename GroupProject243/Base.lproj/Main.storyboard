@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IZG-hM-L9w">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Change of Base-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GroupProject243" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +19,155 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-5q-wht">
+                                <rect key="frame" x="172" y="119" width="256" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="iMt-9D-Use"/>
+                                    <constraint firstAttribute="height" constant="30" id="qcB-Qx-7jh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-ei-3dJ">
+                                <rect key="frame" x="20" y="211" width="560" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ON-4d-bsX">
+                                <rect key="frame" x="246" y="430" width="108" height="37"/>
+                                <color key="backgroundColor" red="0.42745098039215684" green="0.792156862745098" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="3ZN-l4-X30"/>
+                                    <constraint firstAttribute="height" constant="37" id="p0U-Q3-mRE"/>
+                                </constraints>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="convert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wW-oU-F9e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tn-nL-9LU">
+                                <rect key="frame" x="20" y="508" width="140" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="YBL-3v-BdK"/>
+                                    <constraint firstAttribute="width" constant="140" id="tbO-ur-cBG"/>
+                                </constraints>
+                                <state key="normal" title="Select Approach">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectApproach:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XFR-k9-OcN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG2-ka-ucu">
+                                <rect key="frame" x="440" y="508" width="140" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="SqB-cq-7Fv"/>
+                                </constraints>
+                                <state key="normal" title="Select Base">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectBase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FU-0G-k1m"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System Time Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3x-Ju-g9e">
+                                <rect key="frame" x="228" y="299" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algorithm Time Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHd-8r-bzJ">
+                                <rect key="frame" x="219" y="336" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8Tn-nL-9LU" firstAttribute="baseline" secondItem="UG2-ka-ucu" secondAttribute="firstBaseline" id="7RJ-IL-49H"/>
+                            <constraint firstItem="Vhc-5q-wht" firstAttribute="centerX" secondItem="6ZW-ei-3dJ" secondAttribute="centerX" id="7iE-Dp-QMb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Tn-nL-9LU" secondAttribute="bottom" constant="55" id="9QH-5g-lzK"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BNt-fR-RYr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ON-4d-bsX" secondAttribute="bottom" constant="133" id="DYq-d7-An2"/>
+                            <constraint firstItem="nHd-8r-bzJ" firstAttribute="top" secondItem="K3x-Ju-g9e" secondAttribute="bottom" constant="16" id="FiL-xo-by3"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="trailing" secondItem="UG2-ka-ucu" secondAttribute="trailing" id="LmX-zK-bHU"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="top" secondItem="Vhc-5q-wht" secondAttribute="bottom" constant="62" id="Rz8-3n-A2P"/>
+                            <constraint firstItem="K3x-Ju-g9e" firstAttribute="top" secondItem="6ZW-ei-3dJ" secondAttribute="bottom" constant="49" id="Ved-e0-tK1"/>
+                            <constraint firstItem="Vhc-5q-wht" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="c7e-qs-grw"/>
+                            <constraint firstItem="K3x-Ju-g9e" firstAttribute="centerX" secondItem="nHd-8r-bzJ" secondAttribute="centerX" id="cb5-gm-l0A"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="centerX" secondItem="nHd-8r-bzJ" secondAttribute="centerX" id="dgN-ea-izH"/>
+                            <constraint firstItem="8Tn-nL-9LU" firstAttribute="top" secondItem="UG2-ka-ucu" secondAttribute="top" id="dw9-cS-O8b"/>
+                            <constraint firstItem="UG2-ka-ucu" firstAttribute="baseline" secondItem="8Tn-nL-9LU" secondAttribute="firstBaseline" id="hVW-QE-NZG"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uhw-N1-qYv"/>
+                            <constraint firstItem="6ZW-ei-3dJ" firstAttribute="leading" secondItem="8Tn-nL-9LU" secondAttribute="leading" id="y5G-iE-xTF"/>
+                            <constraint firstItem="nHd-8r-bzJ" firstAttribute="centerX" secondItem="3ON-4d-bsX" secondAttribute="centerX" id="yoS-76-UJP"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C2D-kx-qyz" appends="YES" id="EKG-PS-EHU"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Change of Base" id="ehA-aQ-e0Z"/>
+                    <connections>
+                        <outlet property="algorithmTimeLable" destination="nHd-8r-bzJ" id="b9a-yQ-VUq"/>
+                        <outlet property="approachButton" destination="8Tn-nL-9LU" id="7fL-hD-4LP"/>
+                        <outlet property="approachConstraint" destination="9QH-5g-lzK" id="yl9-pk-4S3"/>
+                        <outlet property="baseButton" destination="UG2-ka-ucu" id="r7v-Qw-RG7"/>
+                        <outlet property="convertButton" destination="3ON-4d-bsX" id="CES-NB-1If"/>
+                        <outlet property="convertConstraint" destination="DYq-d7-An2" id="RCp-CZ-Goa"/>
+                        <outlet property="numberTextField" destination="Vhc-5q-wht" id="of1-9f-t40"/>
+                        <outlet property="resultLabel" destination="6ZW-ei-3dJ" id="8KU-kG-tql"/>
+                        <outlet property="systemTimeLabel" destination="K3x-Ju-g9e" id="Xs1-fQ-QAA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C2D-kx-qyz">
+                    <connections>
+                        <action selector="backgroundTap:" destination="BYZ-38-t0r" id="jn9-pN-abT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8ac-wF-98x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZG-hM-L9w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVP-jv-qfK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mRw-l8-kHF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7Q-w4-0af" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="429"/>
         </scene>
     </scenes>
 </document>

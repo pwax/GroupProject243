@@ -286,6 +286,7 @@
 				D2BFDA191CC034D200451A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
