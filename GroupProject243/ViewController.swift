@@ -50,10 +50,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //logic for when bottom up is chosen
         }
         
-
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         approachPicker.addAction(topDown)
         approachPicker.addAction(bottomUp)
+        approachPicker.addAction(cancel)
 
         
         self.presentViewController(approachPicker, animated: true, completion: nil)
@@ -76,9 +77,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //logic for when base 10 is chosen
         }
         
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
         basePicker.addAction(base2)
         basePicker.addAction(base10)
         basePicker.addAction(base16)
+        basePicker.addAction(cancel)
         
         self.presentViewController(basePicker, animated: true, completion: nil)
         
