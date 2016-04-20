@@ -39,10 +39,50 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func selectApproach(sender: AnyObject) {
+        //show approach picker
+        let approachPicker = UIAlertController(title: "Select Base", message: nil, preferredStyle: .ActionSheet)
+        
+        let topDown = UIAlertAction(title: "Top-Down", style: .Default) { (action) in
+            //logic for when top down is chosen
+        }
+        
+        let bottomUp = UIAlertAction(title: "Bottom-Up", style: .Default) { (action) in
+            //logic for when bottom up is chosen
+        }
+        
+
+        
+        approachPicker.addAction(topDown)
+        approachPicker.addAction(bottomUp)
+
+        
+        self.presentViewController(approachPicker, animated: true, completion: nil)
         
     }
     
     @IBAction func selectBase(sender: AnyObject) {
+        //show base picker
+        let basePicker = UIAlertController(title: "Select Base", message: nil, preferredStyle: .ActionSheet)
+        
+        let base2 = UIAlertAction(title: "Base 2", style: .Default) { (action) in
+            //logic for when base 2 is chosen
+        }
+        
+        let base10 = UIAlertAction(title: "Base 10", style: .Default) { (action) in
+            //logic for when base 10 is chosen
+        }
+        
+        let base16 = UIAlertAction(title: "Base 16", style: .Default) { (action) in
+            //logic for when base 10 is chosen
+        }
+        
+        basePicker.addAction(base2)
+        basePicker.addAction(base10)
+        basePicker.addAction(base16)
+        
+        self.presentViewController(basePicker, animated: true, completion: nil)
+        
+        
         
     }
     
