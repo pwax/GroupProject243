@@ -12,6 +12,7 @@ enum Base {
     case base2
     case base10
     case base16
+    case undefined
 }
 
 enum Approach {
@@ -60,15 +61,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
             base = Base.base10
         }else if basePrefix == "0x"{
             base = Base.base16
+        }else{
+            base = Base.undefined
         }
         
-        print(base)
+        print("input base: \(base)")
         
         return base
         
     }
     
-    func convertNumber(numberString: String, withBase: Base, withApproach approach: Approach, toBase base: Base){
+    func convertNumber(numberString: String, withInputBase inputBase: Base, withApproach approach: Approach, toBase base: Base){
+        
+        if inputBase == .undefined{
+            //dont convert anything since the base is undefined
+            let error = UIAlertController(title: "Whoops 😅", message: "Your input base is undefined", preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+            
+            error.addAction(okayAction)
+            
+            self.presentViewController(error, animated: true, completion: nil)
+            
+        }else{
+            //do our fun stuff
+            
+        }
         
         
         
@@ -76,7 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func goodToConvert() -> Bool{
         if self.numberTextField.text == "" || selectedBase == nil  || selectedApproach == nil{
-            let error = UIAlertController(title: "Whoops", message: "You must have forgotten to input a number, chosen a base, or approach", preferredStyle: .Alert)
+            let error = UIAlertController(title: "Whoops 😅", message: "You must have forgotten to input a number, chosen a base, or approach", preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
             
             error.addAction(okayAction)
@@ -97,7 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if goodToConvert(){
             
-            convertNumber(numberTextField.text!, withBase: determineInputNumberBase(numberTextField.text!), withApproach: self.selectedApproach, toBase: self.selectedBase)
+            convertNumber(numberTextField.text!, withInputBase: determineInputNumberBase(numberTextField.text!), withApproach: self.selectedApproach, toBase: self.selectedBase)
             
             
             self.moveButtonsDown()
@@ -105,7 +122,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             self.showResults()
         }
-        
         
         
     }
