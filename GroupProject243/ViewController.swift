@@ -8,6 +8,17 @@
 
 import UIKit
 
+enum Base {
+    case base2
+    case base10
+    case base16
+}
+
+enum Approach {
+    case topDown
+    case bottomUp
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Properties
@@ -24,7 +35,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var approachConstraint: NSLayoutConstraint!
     @IBOutlet var convertConstraint: NSLayoutConstraint!
     
-    
+    var selectedBase: Base!
+    var selectedApproach: Approach!
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -34,15 +46,67 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //MARK: - Conversion logic
+    
+    func determineInputNumberBase(inputNumber: String) -> Base{
+        
+        let basePrefix = String(inputNumber.characters.prefix(2))
+        
+        var base: Base!
+        
+        if basePrefix == "0b"{
+            base = Base.base2
+        }else if basePrefix == "1b"{
+            base = Base.base10
+        }else if basePrefix == "0x"{
+            base = Base.base16
+        }
+        
+        print(base)
+        
+        return base
+        
+    }
+    
+    func convertNumber(numberString: String, withBase: Base, withApproach approach: Approach, toBase base: Base){
+        
+        
+        
+    }
+    
+    func goodToConvert() -> Bool{
+        if self.numberTextField.text == "" || selectedBase == nil  || selectedApproach == nil{
+            let error = UIAlertController(title: "Whoops", message: "You must have forgotten to input a number, chosen a base, or approach", preferredStyle: .Alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+            
+            error.addAction(okayAction)
+            
+            self.presentViewController(error, animated: true, completion: nil)
+            
+            return false
+            
+        }else{
+            return true
+        }
+    }
+    
     
     //MARK: - Actions
     
     @IBAction func convert(sender: AnyObject) {
         
-        self.moveButtonsDown()
-        self.view.endEditing(true)
+        if goodToConvert(){
+            
+            convertNumber(numberTextField.text!, withBase: determineInputNumberBase(numberTextField.text!), withApproach: self.selectedApproach, toBase: self.selectedBase)
+            
+            
+            self.moveButtonsDown()
+            self.view.endEditing(true)
+            
+            self.showResults()
+        }
         
-        self.showResults()
+        
         
     }
     
@@ -52,10 +116,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let topDown = UIAlertAction(title: "Top-Down", style: .Default) { (action) in
             //logic for when top down is chosen
+            self.selectedApproach = Approach.topDown
+            self.approachButton.setTitle("Top-Down", forState: .Normal)
         }
         
         let bottomUp = UIAlertAction(title: "Bottom-Up", style: .Default) { (action) in
             //logic for when bottom up is chosen
+            self.selectedApproach = Approach.bottomUp
+            self.approachButton.setTitle("Bottom-Up", forState: .Normal)
+            
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -63,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         approachPicker.addAction(topDown)
         approachPicker.addAction(bottomUp)
         approachPicker.addAction(cancel)
-
+        
         
         self.presentViewController(approachPicker, animated: true, completion: nil)
         
@@ -75,14 +144,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let base2 = UIAlertAction(title: "Base 2", style: .Default) { (action) in
             //logic for when base 2 is chosen
+            self.selectedBase = Base.base2
+            self.baseButton.setTitle("Base 2", forState: .Normal)
         }
         
         let base10 = UIAlertAction(title: "Base 10", style: .Default) { (action) in
             //logic for when base 10 is chosen
+            self.selectedBase = Base.base10
+            self.baseButton.setTitle("Base 10", forState: .Normal)
+            
         }
         
         let base16 = UIAlertAction(title: "Base 16", style: .Default) { (action) in
             //logic for when base 10 is chosen
+            self.selectedBase = Base.base16
+            self.baseButton.setTitle("Base 16", forState: .Normal)
+            
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -126,7 +203,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func showResults(){
         
-        UIView.animateWithDuration(0.4) { 
+        UIView.animateWithDuration(0.4) {
             self.systemTimeLabel.alpha = 1
             self.algorithmTimeLable.alpha = 1
             self.resultLabel.alpha = 1
@@ -157,9 +234,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .CurveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-
-            }) { (done) in
-                //
+            
+        }) { (done) in
+            //
         }
     }
     
@@ -189,7 +266,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         algorithmTimeLable.hidden = true
         resultLabel.hidden = true
     }
-
-
+    
+    
 }
 

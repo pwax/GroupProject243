@@ -21,9 +21,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vhc-5q-wht">
-                                <rect key="frame" x="172" y="119" width="256" height="30"/>
+                                <rect key="frame" x="137" y="119" width="326" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="iMt-9D-Use"/>
+                                    <constraint firstAttribute="width" constant="326" id="iMt-9D-Use"/>
                                     <constraint firstAttribute="height" constant="30" id="qcB-Qx-7jh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -103,14 +103,25 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefix with 0b for base 2, 1b for base 10, 0x for base 16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-7T-7iF">
+                                <rect key="frame" x="137" y="157" width="326" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326" id="Bea-ik-RDz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="gz1-7T-7iF" firstAttribute="centerX" secondItem="6ZW-ei-3dJ" secondAttribute="centerX" id="2vM-qb-YkO"/>
                             <constraint firstItem="8Tn-nL-9LU" firstAttribute="baseline" secondItem="UG2-ka-ucu" secondAttribute="firstBaseline" id="7RJ-IL-49H"/>
                             <constraint firstItem="Vhc-5q-wht" firstAttribute="centerX" secondItem="6ZW-ei-3dJ" secondAttribute="centerX" id="7iE-Dp-QMb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Tn-nL-9LU" secondAttribute="bottom" constant="55" id="9QH-5g-lzK"/>
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BNt-fR-RYr"/>
+                            <constraint firstItem="gz1-7T-7iF" firstAttribute="top" secondItem="Vhc-5q-wht" secondAttribute="bottom" constant="8" id="BpK-LX-anz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ON-4d-bsX" secondAttribute="bottom" constant="133" id="DYq-d7-An2"/>
                             <constraint firstItem="nHd-8r-bzJ" firstAttribute="top" secondItem="K3x-Ju-g9e" secondAttribute="bottom" constant="16" id="FiL-xo-by3"/>
                             <constraint firstItem="6ZW-ei-3dJ" firstAttribute="trailing" secondItem="UG2-ka-ucu" secondAttribute="trailing" id="LmX-zK-bHU"/>
