@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var approachConstraint: NSLayoutConstraint!
     @IBOutlet var convertConstraint: NSLayoutConstraint!
+    
+    
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Actions
     
     @IBAction func convert(sender: AnyObject) {
+        
+        self.moveButtonsDown()
+        self.view.endEditing(true)
+        
+        self.showResults()
         
     }
     
@@ -96,9 +104,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
     //MARK: - UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
+        hideResults()
         self.moveButtonsUp()
     }
     
@@ -106,7 +114,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.moveButtonsDown()
     }
     
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        
+        hideResults()
+        
+        return true
+    }
+    
+    
     //MARK: - UI
+    
+    func showResults(){
+        
+        UIView.animateWithDuration(0.4) { 
+            self.systemTimeLabel.alpha = 1
+            self.algorithmTimeLable.alpha = 1
+            self.resultLabel.alpha = 1
+            
+            self.systemTimeLabel.hidden = false
+            self.algorithmTimeLable.hidden = false
+            self.resultLabel.hidden = false
+        }
+    }
+    
+    func hideResults(){
+        
+        UIView.animateWithDuration(0.4) {
+            self.systemTimeLabel.alpha = 0
+            self.algorithmTimeLable.alpha = 0
+            self.resultLabel.alpha = 0
+            
+            self.systemTimeLabel.hidden = true
+            self.algorithmTimeLable.hidden = true
+            self.resultLabel.hidden = true
+        }
+    }
+    
     
     func moveButtonsUp(){
         approachConstraint.constant = 350
