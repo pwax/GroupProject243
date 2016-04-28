@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func goodToConvert() -> Bool{
         if self.numberTextField.text == "" || selectedBase == nil{
-            let error = UIAlertController(title: "Whoops 😅", message: "You must have forgotten to input a number, chosen a base, or approach", preferredStyle: .Alert)
+            let error = UIAlertController(title: "Whoops 😅", message: "You must have forgotten to input a number for a base to convert.", preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
             
             error.addAction(okayAction)
