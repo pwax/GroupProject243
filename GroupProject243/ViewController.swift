@@ -35,7 +35,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var convertConstraint: NSLayoutConstraint!
     
     var selectedBase: Base!
-    var selectedApproach: Approach!
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -57,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     func goodToConvert() -> Bool{
-        if self.numberTextField.text == "" || selectedBase == nil  || selectedApproach == nil{
+        if self.numberTextField.text == "" || selectedBase == nil{
             let error = UIAlertController(title: "Whoops 😅", message: "You must have forgotten to input a number, chosen a base, or approach", preferredStyle: .Alert)
             let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
             
